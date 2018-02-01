@@ -1,24 +1,48 @@
 <p>
-  this is the one {{person}} {{age}}
+  {{title}}  {{reason}}
+
 </p>
 <div>
-	
+	this is the one {{person}} {{age}} 
 	{{Images.name}} and {{Images.user}} for {{Images.id}}
 </div>
+<h2>Edit User</h2>
 
-<!-- <div>
-	<ul>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
+<form>
+	<div>
+		<label for='name'>Name	</label><br />
+		<input type="text" />
+	</div>
+</form>
+<form>
+	<div>
+		<label for='user'>User	</label><br />
+		<input type="text" />
+	</div>
+</form>
+<form>
+	<div>
+		<label for='url'>URL	</label><br />
+		<input type="text" />
+	</div>
+</form>
+
+
+<button (click)="onclick()">click me </button>
+<form (submit)="addCollection(collect.value)">
+	<div>
+		<label  for="collect"> Add Collection	</label>
+		<input type="text" #collect />
+	</div>
 	
-</div> -->
+</form>
 
 <div>
 	<ul>
-		<li *ngFor="let collection of collections; let i = index">{{i + 1}}: {{collection}}</li>
+		<li *ngFor="let collection of collections; let i = index">
+			{{i + 1}} : {{collection}} <button (click)="deleteCol(collection)">x</button>
+		</li>
 	</ul>
-	<!-- {{collection.[0]}} and {{collection.[1]}} for {{collection.[2]}} -->
+	
 </div>
+
